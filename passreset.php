@@ -19,7 +19,7 @@ if ($query){
         $mail->SMTPDebug = 1; // hata ayiklama: 1 = hata ve mesaj, 2 = sadece mesaj
         $mail->SMTPAuth = true;
         $mail->SMTPSecure = 'ssl';
-        $mail->Host = 'mail.sdkakcy.com';
+        $mail->Host = '';
         $mail->Port = 465;
         $mail->IsHTML(true);
         $mail->SetLanguage("tr", "phpmailer/language");
