@@ -1,6 +1,20 @@
 <?php
 $sayfa="Yönetim Paneli ";
 @include("tasarim/header.php");
+?>
+<style>
+.btn.btn-danger{
+  float:right;  
+  margin-left:10px; 
+  cursor:pointer;
+}
+.btn.btn-warning{
+  color:white; 
+  float:right;
+}
+
+</style>
+<?php
 $kadi=$_SESSION['kadi'];
 @include("tasarim/menu.php");
 ?>
@@ -57,19 +71,23 @@ $kadi=$_SESSION['kadi'];
 
                       <tbody>
                       <?php
-$query = $db->query("SELECT * FROM kullanicilar ORDER BY id", PDO::FETCH_ASSOC);
+$query = $db->query("SELECT * FROM kullanicilar ORDER BY ID", PDO::FETCH_ASSOC);
 if ( $query->rowCount() ){
      foreach( $query as $row ){
-          echo"<tr>";
-                  print "<td>". $row['kullanici_adi']. "</td>";
-                  print "<td>". $row['k_goruntulenecek_ad']. "</td>";
-                  print "<td>". $row['k_eposta']. "</td>";
-                  print "<td>". $row['k_durum']. "</td>";
-                  print "<td>". $row['k_durum']. "</td>";
-                  print "<td>"."<form action='sefer_sil.php' method='POST' style='float:right;'><input type='text' name='sil' style='display:none; width:30px;' value='$row[ID]'>"."<input style='float:right;  margin-left:10px; cursor:pointer;' class='btn btn-danger' type='submit' value='Sil'>"."</form>"
-                  ."<a role='button' href=\"sefer_guncelle.php?id=$row[ID]\" class='btn btn-warning' style='color:white; float:right;'>".'Düzenle'."</a>"
-                  ."</td>";
-            echo"</tr>";
+          ?><tr>
+              <td><?php echo $row['kullanici_adi'] ?></td>
+              <td><?php echo $row['k_goruntulenecek_ad'] ?></td>
+              <td><?php echo $row['k_eposta'] ?></td>
+              <td><?php echo $row['k_durum'] ?></td>
+              <td><?php echo $row['k_durum'] ?></td>
+              <td>
+                <form action='kullanici_sil.php' method='POST' style='float:right;'>
+                  <input type='text' name='sil' style='display:none; width:30px;' value=<?php echo $row['ID'] ?>>
+                  <input class='btn btn-danger' type='submit' value='Sil'>
+                </form>
+                  <a role="button" href="kullanici_duzenle.php?id=<?php echo $row['ID'] ?>" class="btn btn-warning">Düzenle</a>
+              </td>
+            </tr><?php
      }
 }
 ?>

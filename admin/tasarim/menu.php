@@ -33,7 +33,7 @@
                   <li><a><i class="fa fa-edit"></i> İçerikler <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="duzenle.php">Tüm İçerikler</a></li>
-                      <li><a href="yeniicerik.php">Yeni Ekle</a></li>
+                      <li><a href="yeni_icerik.php">Yeni Ekle</a></li>
                     </ul>
                   </li>
                   <li><a><i class="fa fa-clone"></i> Sayfalar <span class="fa fa-chevron-down"></span></a>
@@ -122,7 +122,7 @@
                   </a>
                   <ul class="dropdown-menu dropdown-usermenu pull-right">
                     <li><a href="javascript:;"> Profil</a></li>
-                    <li><a href="javascript:;">Yardım</a></li>
+                    <!--<li><a href="javascript:;">Yardım</a></li>-->
                     <li><a href="kapat.php"><i class="fa fa-sign-out pull-right"></i> Çıkış yap</a></li>
                   </ul>
                 </li>
