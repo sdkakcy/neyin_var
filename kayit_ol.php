@@ -48,8 +48,8 @@ if($sfr != $rsfr){
           $mail->IsHTML(true);
           $mail->SetLanguage("tr", "phpmailer/language");
           $mail->CharSet  ="utf-8";
-          $mail->Username = "iletisim@sdkakcy.com"; // Mail adresimizin kullanicı adi
-          $mail->Password = "vBpWos1.wZ;n"; // Mail adresimizin sifresi
+          $mail->Username = ""; // Mail adresimizin kullanicı adi
+          $mail->Password = ""; // Mail adresimizin sifresi
           $mail->SetFrom("posta@neyinvar.com", "Neyin var?"); // Mail attigimizda gorulecek ismimiz
           $mail->AddAddress($email); // Maili gonderecegimiz kisi yani alici
           $mail->Subject = "Hesabını Etkinleştir"; // Konu basligi
